@@ -1,0 +1,4 @@
+{
+    "typescript.tsserver.maxTsServerMemory": 20000,
+    "json.maxItemsComputed": 20000
+}
