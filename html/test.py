@@ -14,12 +14,24 @@ def show_heatmap(Data,saveplace,show=False,save=False):
         plt.show()
         
 def set_data():
-    url = 
-    df = pd.read_csv(open_url(url))
-    voo_date=pd.read_csv("D:\Portfolio\html\Data\Voo_date.csv")
-    qqq_date=pd.read_csv("html\Data\Qqq_date.csv")
-    jpy_x_date=pd.read_csv("html\Data\Jpy_x_date.csv")
-    n225_date=pd.read_csv("html\Data\Japan_date.csv")
+    url = "https://raw.githubusercontent.com/Soratop/Portfolio/main/html/Data/Japan_date.csv"
+    voo_date = pd.read_csv(open_url(url))
+    #voo_date=pd.read_csv("D:\Portfolio\html\Data\Voo_date.csv")
+    
+    url = "https://raw.githubusercontent.com/Soratop/Portfolio/main/html/Data/Qqq_date.csv"
+    qqq_date = pd.read_csv(open_url(url))
+    #qqq_date=pd.read_csv("html\Data\Qqq_date.csv")
+    
+    url = "https://raw.githubusercontent.com/Soratop/Portfolio/main/html/Data/Jpy_x_date.csv"
+    jpy_x_date = pd.read_csv(open_url(url))
+    
+    #jpy_x_date=pd.read_csv("html\Data\Jpy_x_date.csv")
+    
+    url = "https://raw.githubusercontent.com/Soratop/Portfolio/main/html/Data/Japan_date.csv"
+    n225_date = pd.read_csv(open_url(url))
+    
+    #n225_date=pd.read_csv("html\Data\Japan_date.csv")
+    
     n225_date["Usd Close"]=0
     for i in range(len(n225_date)):
         n225_date["Usd Close"][i]=n225_date["Adj Close"][i]/jpy_x_date["Adj Close"][i]
