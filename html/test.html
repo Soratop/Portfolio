@@ -5,10 +5,14 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body>
+    <div id="result"></div>
     <py-config>
-      packages = ["pandas", "numpy","seaborn"]
+      packages = ["pandas", "numpy","seaborn","matplotlib"]
       [[fetch]]
       files =["./test.py"]
+      plugins = [
+                      "https://pyscript.net/latest/plugins/python/py_tutor.py"
+                    ]
     </py-config>
     <py-script src="./test.py">
     </py-script>
